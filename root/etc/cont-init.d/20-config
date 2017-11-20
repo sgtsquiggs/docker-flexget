@@ -1,0 +1,14 @@
+#!/usr/bin/with-contenv bash
+
+# make our folders
+mkdir -p \
+    /config \
+    /run
+
+# permissions
+chown -R abc:abc \
+    /config \
+    /run
+chmod -R g+w \
+    /config
+chmod -R 644 /etc/logrotate.d/flexget

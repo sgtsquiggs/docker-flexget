@@ -1,0 +1,13 @@
+/config/*.log {
+    rotate 7
+    weekly
+    compress
+    delaycompress
+    nodateext
+    notifempty
+    missingok
+    sharedscripts
+    postrotate
+        flexget -c /config/config.yml daemon reload-config
+    endscript
+}
